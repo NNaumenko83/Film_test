@@ -1,7 +1,7 @@
 .header {
   padding-top: 40px;
   padding-bottom: 44px;
-  width: 320px;
+  max-width: 100%;
   height: 230px;
   margin: 0 auto;
 
@@ -15,7 +15,7 @@
   @include tablet {
     padding-top: 40px;
     padding-bottom: 44px;
-    width: 768px;
+    // max-width: 768px;
     height: 216px;
 
     background-image: url('../images/Tablet/Header_main_bcg_tablet@1x-min.jpg');
@@ -28,7 +28,7 @@
   @include desktop {
     padding-top: 40px;
     padding-bottom: 44px;
-    width: 1280px;
+    // max-width: 1280px;
     height: 216px;
 
     background-image: url('../images/Desktop/Header_main_bcg_desktop@1x-min.jpg');
@@ -42,7 +42,8 @@
 .header__container {
   padding-left: 20px;
   padding-right: 20px;
-  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 
   @include tablet {
     padding-left: 32px;
@@ -181,10 +182,10 @@
 }
 
 .header__form {
-  width: 100%;
+  max-width: 336px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
   border-bottom: 0.5px solid white;
 
   transition-property: all;
@@ -192,12 +193,11 @@
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
   @include tablet {
-    width: 336px;
     margin: 0 auto 20px;
   }
 
   @include desktop {
-    width: 394px;
+    max-width: 394px;
     margin: 0 auto 20px;
   }
 
@@ -211,12 +211,9 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
+  text-align: center;
 
   color: #ff001b;
-
-  @include tablet {
-    text-align: center;
-  }
 }
 
 .logo-text {

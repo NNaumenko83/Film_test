@@ -1,2 +1,11 @@
+@import './utilities/mixins';
+@import './utilities/placeholders';
+@import './utilities/variables';
+
 @import './common';
-@import './example';
+
+@import './base/typography';
+@import './base/base';
+@import './base/reset';
+
+@import './layout/header';

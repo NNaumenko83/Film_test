@@ -1,0 +1,242 @@
+.header {
+  padding-top: 40px;
+  padding-bottom: 44px;
+  width: 320px;
+  height: 230px;
+  margin: 0 auto;
+
+  background-image: url('../images/Mobile/Header_main_bcg_mobile@1x-min.jpg');
+  background-size: cover;
+
+  @include retina {
+    background-image: url('../images/Mobile/Header_main_bcg_mobile@2x-min.jpg');
+  }
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 44px;
+    width: 768px;
+    height: 216px;
+
+    background-image: url('../images/Tablet/Header_main_bcg_tablet@1x-min.jpg');
+
+    @include retina {
+      background-image: url('../images/Tablet/Header_main_bcg_tablet@2x-min.jpg');
+    }
+  }
+
+  @include desktop {
+    padding-top: 40px;
+    padding-bottom: 44px;
+    width: 1280px;
+    height: 216px;
+
+    background-image: url('../images/Desktop/Header_main_bcg_desktop@1x-min.jpg');
+
+    @include retina {
+      background-image: url('../images/Desktop/Header_main_bcg_desktop@2x-min.jpg');
+    }
+  }
+}
+
+.header__container {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+
+  @include tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.header__nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 54px;
+
+  @include tablet {
+    margin-bottom: 41px;
+  }
+
+  @include desktop {
+    margin-bottom: 41px;
+  }
+}
+
+.site-nav {
+  display: flex;
+  gap: 40px;
+}
+
+.site-nav__link {
+  color: currentColor;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.logo__link {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+  &:hover {
+    color: #ff6b01;
+  }
+}
+
+.site-nav__link--current::after {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  content: '';
+  width: 35px;
+  height: 3px;
+  background-color: #ff001b;
+}
+
+.site-nav__link--no-current::after {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  content: '';
+  width: 69px;
+  height: 3px;
+  background-color: #ff6b01;
+
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+  transform: scaleX(0);
+}
+
+.site-nav__link--no-current:hover.site-nav__link--no-current:hover::after,
+.site-nav__link--no-current:focus.site-nav__link--no-current:hover::after {
+  transform: scaleX(1);
+}
+
+.site-nav__link--no-current:hover,
+.site-nav__link--no-current:focus {
+  color: #ff6b01;
+}
+
+.site-nav__item {
+  position: relative;
+}
+
+.header__input {
+  border-style: none;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+  color: white;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+
+    color: white;
+  }
+}
+
+.submit__icon {
+  color: white;
+
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.submit-button {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.submit-button:hover .submit__icon,
+.submit-button:focus .submit__icon {
+  color: #ff6b01;
+}
+
+.header__form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 0.5px solid white;
+
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+  @include tablet {
+    width: 336px;
+    margin: 0 auto 20px;
+  }
+
+  @include desktop {
+    width: 394px;
+    margin: 0 auto 20px;
+  }
+
+  &:has(.header__input:focus) {
+    border-bottom: 0.5px solid #ff6b01;
+  }
+}
+
+.header__error-message {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+
+  color: #ff001b;
+
+  @include tablet {
+    text-align: center;
+  }
+}
+
+.logo-text {
+  display: none;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.17;
+  color: currentColor;
+
+  @include tablet {
+    display: inline;
+  }
+}
+
+.logo__icon {
+  color: currentColor;
+  @include tablet {
+    margin-right: 10px;
+  }
+}
